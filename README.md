@@ -3,7 +3,7 @@ by [Alphacamp](http://sg.alphacamp.co)
 
 ### Squirrel ERD
 
-- [View ERD](#)
+- [Download ERD](https://s3-ap-northeast-1.amazonaws.com/assets.alphacamp.co/attachments/uploads/000/000/147/original/squirrel_v3.jpg?1510576435)
 
 
 ### Getting Started
