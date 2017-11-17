@@ -10,9 +10,12 @@ class ChallengesController < ApplicationController
 
 	def create
 		@challenge = Challenge.new(challenge_params)
-		@challenge.save
-
-		redirect_to challenges_path
+		
+		if @challenge.save
+			redirect_to challenges_path
+		else
+			render :action => :new				
+		end
 	end
 
 	def edit
@@ -21,9 +24,11 @@ class ChallengesController < ApplicationController
 
 	def update
 		@challenge = Challenge.find(params[:id])
-		@challenge.update_attributes(challenge_params)
-
-		redirect_to challenges_path
+		if @challenge.update_attributes(challenge_params)
+			redirect_to challenges_path
+		else
+			render :action => :edit
+		end	
 	end
 
 	def destroy
