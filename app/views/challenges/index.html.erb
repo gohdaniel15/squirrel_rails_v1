@@ -1,0 +1,24 @@
+<table class="table table-striped table-condensed">
+
+			<tr>
+				<td></td>				
+				<td>Title</td>
+				<td>Description</td>		
+				<td>Score</td>
+				<td></td>																				
+				<td></td>			
+			</tr>
+
+		<% @challenges.each do |challenge| %>
+			<tr>
+				<td></td>
+				<td><%= challenge.title %></td>
+				<td width="70%"><%= challenge.description %></td>		
+				<td><%= challenge.score %></td>
+				<td><%= link_to "Edit", edit_challenge_path(challenge) %></td>		
+				<td><%= link_to "Delete", challenge_path(challenge), method: :delete, data: {confirm: 'Are you sure?'} %></td>												
+			</tr>
+		<% end %>
+
+</table>
+<%= link_to "New challenge", new_challenge_path %>	

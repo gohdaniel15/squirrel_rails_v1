@@ -1,0 +1,19 @@
+<div class="form container">	
+	<%= form_for @challenge do |f| %>
+		<div class="form-group">
+			<%= f.label :title, "Title" %><br>
+			<%= f.text_field :title %>	
+		</div>
+		<div class="form-group">
+			<%= f.label :description, "Description" %><br>
+			<%= f.text_area :description %>	
+		</div>
+		<div class="form-group">		
+			<%= f.label :score, "Score (1-10, integer only)" %><br>
+			<%= f.text_field :score %>	
+		</div>
+		<div class="form-group">		
+			<%= f.submit %>
+		</div>	
+	<% end %>
+</div>
