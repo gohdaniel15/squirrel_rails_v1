@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116151437) do
+ActiveRecord::Schema.define(version: 20171120142155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,23 +44,23 @@ ActiveRecord::Schema.define(version: 20171116151437) do
   end
 
   create_table "challenges", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.integer "score"
+    t.string "title", null: false
+    t.string "description", null: false
+    t.integer "score", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "instructors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "name", null: false
+    t.string "email", null: false
     t.bigint "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,8 +68,7 @@ ActiveRecord::Schema.define(version: 20171116151437) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.date "transaction_date"
-    t.integer "transaction_score"
+    t.integer "score"
     t.bigint "student_id"
     t.bigint "challenge_id"
     t.datetime "created_at", null: false
