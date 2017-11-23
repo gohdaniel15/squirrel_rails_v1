@@ -5,4 +5,5 @@ class Student < ApplicationRecord
   has_many :challenges, through: :challenge_acceptances
 
   belongs_to :batch
+
 end
