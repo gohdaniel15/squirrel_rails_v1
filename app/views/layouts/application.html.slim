@@ -1,0 +1,20 @@
+html
+head
+  title SquirrelRailsV1
+  = csrf_meta_tags
+
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+body
+  - if current_user
+    = link_to('sign out', destroy_user_session_path, method: :delete)
+    = link_to('change password', edit_registration_path(current_user))
+  - else
+    = link_to('sign up', new_user_registration_path)
+    = link_to('sign in', new_user_session_path)
+
+  p.notice = notice
+	p.alert = alert
+  
+  = yield
