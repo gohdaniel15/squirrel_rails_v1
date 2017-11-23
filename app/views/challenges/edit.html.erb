@@ -1,0 +1,9 @@
+<%= render :partial => "form" %>
+
+<% if @challenge.errors.present? %>
+  <ul>
+    <% @challenge.errors.each do |error, message| %>
+      <li> <%= "#{error.capitalize}  #{message}" %></li>
+    <% end %>
+  </ul>
+<% end %>

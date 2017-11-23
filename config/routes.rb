@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root 'instructors#index'
+  root "challenges#index"
 
   devise_for :users
+
+  resources :challenges
 
 end
