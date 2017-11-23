@@ -1,0 +1,23 @@
+
+= form_for @challenge do |f|
+
+	= f.label :title, "Title"
+	br
+	= f.text_field :title
+	br	
+
+	
+	= f.label :description, "Description" 
+	br 
+	= f.text_area :description
+	br
+
+			
+	= f.label :score, "Score (1-10, integer only)"
+	br
+	= f.text_field :score
+	br	
+
+			
+	= f.submit
+			
